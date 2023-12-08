@@ -14,6 +14,6 @@ fn main() {
     io::stdin().read_line(&mut lesson_name).expect("Failed to read line");
     lesson_name = lesson_name.trim().replace(|c: char| !c.is_alphanumeric(), "");
 
-    let combined = format!("{}_{}", chapter_name, lesson_name);
+    let combined = format!("{}_{}", chapter_name, lesson_name).to_lowercase();
     println!("Combined string: {}", combined);
 }
