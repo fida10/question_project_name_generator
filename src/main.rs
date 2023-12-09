@@ -1,4 +1,4 @@
-use std::io::{self, Write};
+use std::{io::{self, Write}, thread, time::Duration};
 
 fn main() {
     let mut chapter_name = String::new();
@@ -15,5 +15,9 @@ fn main() {
     lesson_name = lesson_name.trim().replace(|c: char| !c.is_alphanumeric(), "");
 
     let combined = format!("{}_{}", chapter_name, lesson_name).to_lowercase();
+    println!("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     println!("Combined string: {}", combined);
+    println!("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    println!("Waiting 10 seconds before closing...");
+    thread::sleep(Duration::from_secs(10));
 }
