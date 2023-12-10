@@ -15,15 +15,13 @@ fn main() {
             .expect("Failed to read line");
         if temp_chap_name.eq("\n") {
             println!("Using previous chapter name: {}", chapter_name)
-        } else if temp_chap_name.eq("exit") {
+        } else if temp_chap_name.eq("exit\n") {
             println!("Exiting!");
             rerun = false;
             continue;
         } else {
             chapter_name = temp_chap_name;
         }
-
-        println!("chapter name: {}", chapter_name);
 
         chapter_name = chapter_name
             .trim()
